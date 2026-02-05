@@ -1,35 +1,40 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
-    <title>Nordic Forge - 3D Studio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>"
+    />
+    <title>Studio 3D Master - Gestión de Taller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Outfit', 'sans-serif'],
+              sans: ["Outfit", "sans-serif"],
             },
             colors: {
               nordic: {
-                black: '#0a0a0c',
-                gray: '#16171d',
-                lightGray: '#22232a',
-                bronze: '#d4af37',
-                bronzeLight: '#e5c494',
-                bronzeDark: '#8a6d1a',
-              }
-            }
-          }
-        }
-      }
+                black: "#0a0a0c",
+                gray: "#16171d",
+                lightGray: "#22232a",
+                bronze: "#d4af37",
+                bronzeLight: "#e5c494",
+                bronzeDark: "#8a6d1a",
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
       body {
@@ -38,35 +43,56 @@
         margin: 0;
         overflow-x: hidden;
       }
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #0a0a0c; }
-      ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
-      .bronze-glow { box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); }
-      .bronze-text-glow { text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
-      @keyframes pulse-bronze {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.7; }
+      ::-webkit-scrollbar {
+        width: 6px;
       }
-      .animate-pulse-bronze { animation: pulse-bronze 2s infinite; }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0c;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 10px;
+      }
+      .bronze-glow {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 10px;
+      }
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade {
+        animation: fade-in 0.4s ease-out forwards;
+      }
     </style>
     <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom": "https://esm.sh/react-dom@^19.2.4",
-    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.45.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
-}
-</script>
-  <link rel="stylesheet" href="/index.css">
-</head>
+      {
+        "imports": {
+          "react": "https://esm.sh/react@^19.2.4",
+          "react-dom": "https://esm.sh/react-dom@^19.2.4",
+          "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
+          "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+          "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+          "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.45.0"
+        }
+      }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <!-- Carga explícita del punto de entrada para evitar 404 -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
 </html>
